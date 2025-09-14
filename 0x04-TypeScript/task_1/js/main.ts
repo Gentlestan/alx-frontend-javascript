@@ -35,7 +35,7 @@ console.log(director1);
 
 // Interface describing the function signature
 // Interface for the function
-interface PrintTeacherFunction {
+interface printTeacherFunction {
   ({ firstName, lastName }: { firstName: string; lastName: string }): string;
 }
 
