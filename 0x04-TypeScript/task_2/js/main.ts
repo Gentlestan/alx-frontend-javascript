@@ -35,7 +35,7 @@ class Teacher implements TeacherInterface {
   }
 }
 
-// Must match the literal text the checker searches for
+// ❗ DO NOT CHANGE THIS FUNCTION
 function createEmployee(salary: number | string): Director | Teacher {
   if (salary < 500) {
     return new Teacher();
@@ -43,10 +43,34 @@ function createEmployee(salary: number | string): Director | Teacher {
   return new Director();
 }
 
+// ✅ New functions for the next task
 
-// Examples
-console.log(createEmployee(200));
-console.log(createEmployee(1000));
-console.log(createEmployee('$500'));
+export function isDirector(employee: Director | Teacher): employee is Director {
+  return employee instanceof Director;
+}
 
+export function executeWork(employee: Director | Teacher): string {
+  if (isDirector(employee)) {
+    return employee.workDirectorTasks();
+  }
+  return employee.workTeacherTasks();
+}
 
+// Example calls
+console.log(executeWork(createEmployee(200)));   // "Getting to work"
+console.log(executeWork(createEmployee(1000)));  // "Getting to director tasks"
+
+// String literal type: can only be "Math" or "History"
+type Subjects = "Math" | "History";
+
+// Function that teaches based on the class
+export function teachClass(todayClass: Subjects): string {
+  if (todayClass === "Math") {
+    return "Teaching Math";
+  }
+  return "Teaching History";
+}
+
+// ✅ Example usage:
+console.log(teachClass("Math"));     // Teaching Math
+console.log(teachClass("History"));  // Teaching History
