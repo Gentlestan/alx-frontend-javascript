@@ -37,12 +37,10 @@ interface PrintTeacherFunction {
     (firstName: string, lastName: string): string;
 }
 
-interface NameParams {
-    firstName: string;
-    lastName: string;
-}
 
-function printTeacher({ firstName, lastName }: NameParams): string {
-    return `${firstName.charAt(0)}. ${lastName}`;
+
+function printTeacher(firstName: string, lastName: string): string {
+  // First letter of firstName + full lastName
+  return `${firstName.charAt(0)}. ${lastName}`;
 }
-console.log(printTeacher({ firstName: "Frank", lastName: "Uyi" }));
+console.log(printTeacher("Frank", "Uyi"));
