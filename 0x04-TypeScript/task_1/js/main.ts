@@ -47,3 +47,39 @@ function printTeacher({ firstName, lastName }: { firstName: string; lastName: st
 // Example usage
 console.log(printTeacher({ firstName: "John", lastName: "Doe" }));
 
+// Interface that describes the constructor’s signature
+interface StudentConstructor {
+  new (firstName: string, lastName: string): StudentClassInterface;
+}
+
+// Interface that describes the public shape of the class
+interface StudentClassInterface {
+  workOnHomework(): string;
+  displayName(): string;
+}
+
+// The class itself
+class StudentClass implements StudentClassInterface {
+  private firstName: string;
+  private lastName: string;
+
+  constructor(firstName: string, lastName: string) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  // Method that returns a fixed string
+  workOnHomework(): string {
+    return "Currently working";
+  }
+
+  // Method that returns only the first name
+  displayName(): string {
+    return this.firstName;
+  }
+}
+
+// Example usage
+const student: StudentClassInterface = new StudentClass("Ada", "Lovelace");
+console.log(student.displayName());   // "Ada"
+console.log(student.workOnHomework()); // "Currently working"
