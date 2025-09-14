@@ -64,7 +64,7 @@ console.log(executeWork(createEmployee(1000)));  // "Getting to director tasks"
 type Subjects = "Math" | "History";
 
 // Function with parameter typed exactly as the checker expects
-export function teachClass(todayClass: Subjects): string {
+export function teachClass(todayClass:Subjects): string {
   if (todayClass === "Math") {
     return "Teaching Math";
   }
