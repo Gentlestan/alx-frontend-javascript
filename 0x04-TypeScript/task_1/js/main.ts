@@ -33,14 +33,15 @@ const director1: Director = {
 };
 console.log(director1);
 
+// Interface describing the function signature
 interface PrintTeacherFunction {
-    (firstName: string, lastName: string): string;
+  (firstName: string, lastName: string): string;
 }
 
-
-
+// Function that returns first letter of firstName + full lastName
 function printTeacher(firstName: string, lastName: string): string {
-  // First letter of firstName + full lastName
   return `${firstName.charAt(0)}. ${lastName}`;
 }
-console.log(printTeacher("Frank", "Uyi"));
+
+// Example usage
+console.log(printTeacher("John", "Doe")); // J. Doe
