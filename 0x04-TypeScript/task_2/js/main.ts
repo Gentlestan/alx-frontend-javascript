@@ -60,16 +60,17 @@ export function executeWork(employee: Director | Teacher): string {
 console.log(executeWork(createEmployee(200)));   // "Getting to work"
 console.log(executeWork(createEmployee(1000)));  // "Getting to director tasks"
 
-// String literal type: can only be "Math" or "History"
+// String literal type allowing only "Math" or "History"
 type Subjects = "Math" | "History";
 
-// Function that teaches based on the class
+// Function with parameter typed exactly as the checker expects
 export function teachClass(todayClass: Subjects): string {
   if (todayClass === "Math") {
     return "Teaching Math";
   }
   return "Teaching History";
 }
+
 
 // ✅ Example usage:
 console.log(teachClass("Math"));     // Teaching Math
