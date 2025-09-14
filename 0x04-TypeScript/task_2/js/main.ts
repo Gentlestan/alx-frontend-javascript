@@ -39,6 +39,7 @@ class TeacherClass implements TeacherInterface {
 }
 
 
+
 function createEmployee(salary: number | string): DirectorClass | TeacherClass {
   // If salary is a number and less than 500, return Teacher
   if (typeof salary === 'number' && salary < 500) {
@@ -49,6 +50,6 @@ function createEmployee(salary: number | string): DirectorClass | TeacherClass {
 }
 
 // Example usage
-console.log(createEmployee(200));   // -> TeacherClass instance
-console.log(createEmployee(1000));  // -> DirectorClass instance
-console.log(createEmployee('$500')); // -> DirectorClass instance
+console.log(createEmployee(200));   
+console.log(createEmployee(1000));  
+console.log(createEmployee('$500')); 
